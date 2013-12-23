@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    .clearfix
+        .center-block
+            .box.col-lg-3
+                .box-header
+                    h2 Login
+                .box-content.clearfix
+                    form.form-horizontal(role='form').col-sm-12
+                        .form-group
+                            .input-group
+                                span.input-group-addon
+                                    i.glyphicon.glyphicon-user
+                                input.form-control(type='text' placeholder='Benutzername')
+                        .form-group
+                            .input-group
+                                span.input-group-addon
+                                    i.glyphicon.glyphicon-asterisk
+                                input.form-control(type='password' placeholder='Passwort')
+                        .form-group
+                            .btn.btn-primary.form-control.login Login
+
+
+
