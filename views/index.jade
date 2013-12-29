@@ -2,24 +2,55 @@ extends layout
 
 block content
     .clearfix
-        .center-block
-            .box.col-lg-3
-                .box-header
-                    h2 Login
-                .box-content.clearfix
-                    form.form-horizontal(role='form').col-sm-12
-                        .form-group
-                            .input-group
-                                span.input-group-addon
-                                    i.glyphicon.glyphicon-user
-                                input.form-control(type='text' placeholder='Benutzername')
-                        .form-group
-                            .input-group
-                                span.input-group-addon
-                                    i.glyphicon.glyphicon-asterisk
-                                input.form-control(type='password' placeholder='Passwort')
-                        .form-group
-                            .btn.btn-primary.form-control.login Login
+        .box.col-lg-3
+            .box-header
+                h2 Login
+            .box-content.clearfix
+                form.form-horizontal(role='form').col-sm-12
+                    .form-group
+                        .input-group
+                            span.input-group-addon
+                                i.glyphicon.glyphicon-user
+                            input.form-control(type='text' placeholder='Benutzername').login_username
+                    .form-group
+                        .input-group
+                            span.input-group-addon
+                                i.glyphicon.glyphicon-asterisk
+                            input.form-control(type='password' placeholder='Passwort').login_password
+                    .form-group
+                        .btn.btn-primary.form-control#login Login
+        .box.col-lg-3
+            .box-header
+                h2 Register
+            .box-content.clearfix
+                form.form-horizontal(role='form').col-sm-12
+                    .form-group
+                        .input-group
+                            span.input-group-addon
+                                i.glyphicon.glyphicon-user
+                            input.form-control(type='text' placeholder='Benutzername').registration_username
+                    .form-group
+                        .input-group
+                            span.input-group-addon
+                                i.glyphicon.glyphicon-asterisk
+                            input.form-control(type='password' placeholder='Passwort').registration_passwort
+                    .form-group
+                        .input-group
+                            span.input-group-addon
+                                i.glyphicon.glyphicon-asterisk
+                            input.form-control(type='password' placeholder='Passwortwiederholung').registration_password_repeat
+                    .form-group
+                        .input-group
+                            span.input-group-addon
+                                i.glyphicon.glyphicon-asterisk
+                            input.form-control(type='email' placeholder='E-Mail').registration_mail
+                    .form-group
+                        .input-group
+                            span.input-group-addon
+                                i.glyphicon.glyphicon-asterisk
+                            input.form-control(type='email' placeholder='E-Mail-Wiederholung').registration_mail_repeat
+                    .form-group
+                        .btn.btn-primary.form-control#register Register
 
 
 

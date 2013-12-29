@@ -8,6 +8,8 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var check = require('validator').check;
+var sanitize = require('validator').sanitize
 
 var app = express();
 
@@ -44,18 +46,20 @@ io.sockets.on('connection', function(socket) {
     socket.emit('news', {
         hello: 'hello'
     });
-    socket.on('register', function(data) {
-        console.log('register');
+    socket.on('registration', function(data) {
         console.log(data);
-        console.log(data.password);
-    });
-    socket.on('check', function(data) {
+        
         try {
             check(data.mail).isEmail();
-            socket.emit('mail',true);
         } catch (err){
-            socket.emit('mail',false);
+            socket.emit('error', err)
         }
-
+        
+        console.log('registration');
+        
+    });
+    socket.on('login', function(data) {
+        console.log('login');
+        console.log(data);
     });
 });
